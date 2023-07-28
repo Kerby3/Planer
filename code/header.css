@@ -1,0 +1,151 @@
+@font-face {
+	font-family: 'andanta regular';
+	src: local('andanta regular'), 
+		url('fonts/andanta.ttf');
+	font-weight: normal;
+}
+
+.header {
+	height: calc(10vh - 1px);
+	background-color: #6c609e;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #6c609e;
+}
+
+.headerActive {
+	animation-name: headerON;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.headerOFF {
+	animation-name: headerOFF;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.name {
+	font-size: 64px;
+	align-self: center;
+	float: left;
+	color: #f6f0ef;
+	margin-left: 20px;
+	display: flex;
+	font-family: 'andanta regular', sans-serif;
+	font-weight: normal;
+}
+
+.datetime {
+	display: flex;
+	font-size: 20px;
+	align-self: center;
+	right: 10px;
+	color: #f6f0ef;
+	margin-right: 20px;
+	flex-direction: column;
+}
+
+.themeToggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.rectangle {
+	width: 50px;
+	height: 30px;
+	border: 1px solid white;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #f6f0ef;
+}
+
+.themeToggleOFF .rectangle {
+	background-color: #f6f0ef;
+	animation-name: rectangleFramesOFF;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.circle {
+	width: 25px;
+	height: 26px;
+	border: 1px solid #069973;
+	border-radius: 50%;
+	background-color: #069973;
+	margin-left: 1px;
+	margin-right: 0px;
+	transform: translate(0px, 0);
+	transition-duration: 0.3s;
+}
+
+.themeToggleActive .rectangle {
+	animation-name: rectangleFramesON;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.themeToggleActive .circle {
+	transform: translate(21px, 0);
+	transition-duration: 0.3s;
+}
+
+@keyframes rectangleFramesON {
+	0% {
+		background-color: #f6f0ef;
+	}
+
+	100% {
+		background-color: #fff;
+	}
+}
+
+@keyframes rectangleFramesOFF {
+	0% {
+		background-color: #fff;
+	}
+
+	100% {
+		background-color: #f6f0ef;
+	}
+}
+
+@keyframes headerON {
+	0% {
+		background-color: #6c609e;
+		border-color: #6c609e;
+	}
+
+	100% {
+		background-color: #0f120e;
+		border-color: #f6f0ef;
+	}
+}
+
+@keyframes headerOFF {
+	0% {
+		background-color: #0f120e;
+		border-color: #f6f0ef;
+	}
+
+	100% {
+		background-color: #6c609e;
+		border-color: #6c609e;
+	}
+}
+
+.headerBlock2 {
+	display: flex;
+	width: 25vh;
+	justify-content: space-between;
+}

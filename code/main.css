@@ -1,0 +1,152 @@
+.container {
+	padding: 0 15px;
+}
+
+.addBlock {
+	width: 100vh;
+	height: 90vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+@media (min-width: 575.98px) {
+	.container {
+		padding: 0 calc(50% - 270px);
+	}
+}
+
+@media (min-width: 767.98px) {
+	.container {
+		padding: 0 calc(50% - 360px);
+	}
+}
+
+@media (min-width: 991.98px) {
+	.container {
+		padding: 0 calc(50% - 480px);
+
+	}
+}
+
+@media (max-width: 991.98px) {
+	.addBlock {
+		flex-direction: column;
+		height: 40vh;
+	}
+}
+
+@media (min-width: 1199.98px) {
+	.container {
+		padding: 0 calc(50% - 590px);
+	}
+
+
+}
+
+.container2 {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+
+
+
+.addTask, .addEvent {
+	width: 40vh;
+	padding: 20px 30px 20px 20px;
+	text-align: center;
+	border: 2px solid #fff;
+	background-color: #f6f0ef;
+	color: #069973;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+
+
+.addTaskOFF, .addEventOFF {
+	animation-name: addButtonsOFF_frames;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	/*animation-fill-mode: forwards;*/
+	background-color: #f6f0ef;
+}
+
+.addTask.addTaskOFF:hover, .addEvent.addEventOFF:hover {
+	background-color: #069973;
+	color: #f6f0ef;
+}
+
+.addTaskActive, .addEventActive {
+	animation-name: addButtonsActive_frames;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	/*animation-fill-mode: forwards;*/
+	background-color: #1a1d1a;
+}
+
+.addTask.addTaskActive:hover, .addEvent.addEventActive:hover {
+	color: #f6f0ef;
+}
+
+.main {
+	height: 90vh;
+	background-color: #fff;
+}
+
+.mainOFF {
+	animation-name: mainOFF_frames;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.mainActive {
+	animation-name: mainActive_frames;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes mainOFF_frames {
+	0% {
+		background-color: #0f120e;	
+	}
+
+	100% {
+		background-color: #fff;
+	}
+}
+
+@keyframes mainActive_frames {
+	0% {
+		background-color: #fff;
+	}
+
+	100% {
+		background-color: #0f120e;
+	}
+}
+
+@keyframes addButtonsOFF_frames {
+	0% {
+		background-color: #1a1d1a;	
+	}
+
+	100% {
+		background-color: #f6f0ef;
+	}
+}
+
+@keyframes addButtonsActive_frames {
+	0% {
+		background-color: #f6f0ef;	
+	}
+
+	100% {
+		background-color: #1a1d1a;
+	}
+}
