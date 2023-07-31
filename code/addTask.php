@@ -1,4 +1,4 @@
 <?php
-$answer = array('answer' => 'OK');
-echo json_encode($answer);
-?>
+require('header.html');
+require('addTaskMain.html');
+?> 

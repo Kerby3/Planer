@@ -23,26 +23,36 @@ themeToggle.addEventListener('click', () => {
 
 addTaskButton.addEventListener('click', () => {
 	console.log('addTask button clicked');
-	postData('addTask.php', {answer: 42}).then((data) => {
-		console.log(data.answer);
+	let arr = {
+		res: 'addTask'
+	};
+	let params = new FormData();
+	params.set('res', 'addTask')
+	postData('redirect.php', params).then((data) => {
+		window.location.href = data.redirectURL;
 	})
 })
 
 addEventButton.addEventListener('click', () => {
 	console.log('addEvent button clicked');
+	let arr = {
+		res: 'addEvent'
+	};
+	let params = new FormData();
+	params.set('res', 'addEvent');
+	postData('redirect.php', params).then((data) => {
+		window.location.href = data.redirectURL;
+	})
+
 })
 
 //// Определяем функцию которая принимает в качестве параметров url и данные которые необходимо обработать
-const postData = async (url = '', data = {}) => {
+const postData = async (url = '', data = '') => {
 	// Формируем запрос
 	const response = await fetch(url, {
-		// По умолчанию метод GET
-		method: 'POST',
-		// Заголовок
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(data)
-	});
+  		method: 'POST',
+  		body: data
+	})
 	return await response.json();
 }
+

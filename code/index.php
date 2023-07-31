@@ -1,4 +1,4 @@
 <?php
-	require('header.html');
-	require('main.html');
+require('header.html');
+require('main.html');
 ?>
